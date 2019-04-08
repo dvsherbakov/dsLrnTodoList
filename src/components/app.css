@@ -1,0 +1,5 @@
+.appContainer {
+    width: 90%;
+    max-width: 350px;
+    display: inline-block;
+}

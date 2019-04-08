@@ -1,0 +1,14 @@
+.listContainer{
+    background-color: lightyellow;
+    text-align: left;
+    text-decoration-color: tomato;
+}
+
+.listItem
+{
+    width: 100%;
+    display:flex;
+    flex-direction: row;           
+    flex-wrap: nowrap;             
+    justify-content: space-between; 
+}

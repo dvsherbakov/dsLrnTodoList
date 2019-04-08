@@ -1,0 +1,35 @@
+.itemContainer{
+    display:block;
+    margin : 1px;
+    padding: 1px;
+}
+
+.itemContainer span{
+    float:left;
+}
+
+.itemButton{
+    float: right;
+    width: 35px;
+    height: 35px;
+    border: solid 2px;
+    border-radius: 3px;
+    margin-right: 2px;
+}
+
+.greenButton{
+    color: green;
+}
+
+.greenButton:hover{
+    color: darkgreen;
+    background-color: lightgreen;
+}
+
+.redButton{
+    color: tomato;
+}
+.redButton:hover{
+    color: darkred;
+    background-color: lightpink;
+}
