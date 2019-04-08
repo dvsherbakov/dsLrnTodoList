@@ -33,3 +33,10 @@
     color: darkred;
     background-color: lightpink;
 }
+
+.normalSpan{
+    text-decoration-line: inherit;
+}
+.doneSpan{
+    text-decoration: line-through;
+}
