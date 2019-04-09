@@ -7,15 +7,17 @@ import "./app.css"
 
 const App = () => {
     const items = [
-        {id:1, name: "Drink Cofe", important: false},
-        {id:2, name: "Create awesome app", important: true},
-        {id:3, name: "Learn react", important: false},
+        {id: 101, name: "Drink Cofe", important: false},
+        {id: 102, name: "Create awesome app", important: true},
+        {id: 103, name: "Learn react", important: false},
 ];
     return (
         <div className="App appContainer">
             <AppHeader />
             <SearchPanel />
-            <TodoList todos = {items} />
+            <TodoList 
+            todos = {items} 
+            onDeleted ={(id)=>console.log('del', id)}/>
         </div>
     );
 }

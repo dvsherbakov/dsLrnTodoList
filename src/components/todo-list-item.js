@@ -5,22 +5,29 @@ class TodoListItem extends React.Component {
     constructor() {
         super();
 
-        this.onLabelClick = () => {
-            this.setState(
-                {
-                    done: true
-                }
-            );
-        }
+
 
         this.state = {
-            done: false
+            done: false,
+            important: false
         }
     }
 
+    onLabelClick = () => {
+        this.setState((state) => {
+            return { done: !state.done }
+        });
+    }
+
+    onMarkImportant = () => {
+        this.setState((state) => {
+            return {important: !state.important}
+        });
+    }
+
     render() {
-        const { name, important = false } = this.props;
-        const { done } = this.state;
+        const { name, onDeleted } = this.props;
+        const { done, important } = this.state;
         let classNames = 'normalSpan';
         if (done) classNames += ' doneSpan';
         const style = {
@@ -35,11 +42,17 @@ class TodoListItem extends React.Component {
                     onClick={this.onLabelClick} >
                     {name}
                 </span>
-                <button className="itemButton redButton" >
+                <button 
+                    type="button" 
+                    className="btn itemButton redButton" 
+                    onClick={onDeleted}>
                     <i className="fa fa-trash" aria-hidden="true"></i>
                 </button>
-                <button className="itemButton greenButton">
-                    <i className="fa fa-exclamation" aria-hidden="true"></i>
+                <button 
+                    type="button" 
+                    className="btn btn-outline-danger itemButton greenButton" 
+                    onClick={this.onMarkImportant}>
+                    <i className="fa fa-exclamation" aria-hidden="true" ></i>
                 </button>
             </div>
         )

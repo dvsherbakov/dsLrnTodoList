@@ -2,6 +2,8 @@
     display:block;
     margin : 1px;
     padding: 1px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.4em;
 }
 
 .itemContainer span{
@@ -10,11 +12,12 @@
 
 .itemButton{
     float: right;
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     border: solid 2px;
     border-radius: 3px;
     margin-right: 2px;
+    align-content: center;
 }
 
 .greenButton{
