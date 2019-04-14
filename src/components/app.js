@@ -2,13 +2,14 @@ import React from 'react';
 import AppHeader from './app-header';
 import SearchPanel from './search-panel';
 import TodoList from './to-do-list';
+import ItemAddForm from './item-add-form';
 
-import "./app.css"
+import "./app.css";
 
 class App extends React.Component {
 
     constructor() {
-        super()
+        super();
 
         this.state = {
             todoData: [
@@ -16,17 +17,28 @@ class App extends React.Component {
                 { id: 102, name: "Create awesome app", important: true },
                 { id: 103, name: "Learn react", important: false },
             ]
-        }
+        };
     }
     deleteItem = (id) => {
-        console.log(id);
         this.setState(({ todoData }) => {
             const idx = todoData.findIndex((el) => el.id === id);
-            
+
             const newData = [
                 ...todoData.slice(0, idx),
-                ...todoData.slice(idx+1)
+                ...todoData.slice(idx + 1)
             ]
+            return {
+                todoData: newData
+            };
+        });
+    }
+    addItem = (text) => {
+        console.log(`Added item: ${text}`)
+        this.setState(({ todoData }) => {
+            const newData = [
+                ...todoData
+            ]
+
             return {
                 todoData: newData
             };
@@ -38,8 +50,9 @@ class App extends React.Component {
                 <AppHeader />
                 <SearchPanel />
                 <TodoList
-                    todos={ this.state.todoData }
-                    onDeleted={ this.deleteItem } />
+                    todos={this.state.todoData}
+                    onDeleted={this.deleteItem} />
+                <ItemAddForm onItemAdd={this.itemAdd} />
             </div>
         );
     }
