@@ -5,8 +5,6 @@ class TodoListItem extends React.Component {
     constructor() {
         super();
 
-
-
         this.state = {
             done: false,
             important: false
