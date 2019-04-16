@@ -7,7 +7,7 @@ import ItemAddForm from './item-add-form';
 import "./app.css";
 
 class App extends React.Component {
-
+    itemCounter =105;
     constructor() {
         super();
 
@@ -18,6 +18,11 @@ class App extends React.Component {
                 { id: 103, name: "Learn react", important: false },
             ]
         };
+    }
+    newItem = (text) =>
+    {
+        this.itemCounter += 1;
+        return { id: this.itemCounter, name: text, important: false }
     }
     deleteItem = (id) => {
         this.setState(({ todoData }) => {
@@ -36,7 +41,8 @@ class App extends React.Component {
         console.log(`Added item: ${text}`)
         this.setState(({ todoData }) => {
             const newData = [
-                ...todoData
+                ...todoData,
+                this.newItem(text)
             ]
 
             return {
@@ -52,7 +58,7 @@ class App extends React.Component {
                 <TodoList
                     todos={this.state.todoData}
                     onDeleted={this.deleteItem} />
-                <ItemAddForm onItemAdd={this.itemAdd} />
+                <ItemAddForm onItemAdd={this.addItem} />
             </div>
         );
     }

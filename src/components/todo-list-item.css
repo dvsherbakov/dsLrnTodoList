@@ -8,6 +8,7 @@
 
 .itemContainer span{
     float:left;
+    text-overflow: clip;
 }
 
 .itemButton{
@@ -39,6 +40,8 @@
 
 .normalSpan{
     text-decoration-line: inherit;
+    width: 75%;
+    
 }
 .doneSpan{
     text-decoration: line-through;
