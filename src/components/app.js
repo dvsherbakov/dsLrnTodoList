@@ -3,7 +3,7 @@ import AppHeader from './app-header';
 import SearchPanel from './search-panel';
 import TodoList from './to-do-list';
 import ItemAddForm from './item-add-form';
-
+import SvgRect from './svg-rect';
 import "./app.css";
 
 class App extends React.Component {
@@ -59,6 +59,7 @@ class App extends React.Component {
                     todos={this.state.todoData}
                     onDeleted={this.deleteItem} />
                 <ItemAddForm onItemAdd={this.addItem} />
+                <SvgRect />
             </div>
         );
     }
